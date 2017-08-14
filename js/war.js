@@ -73,8 +73,12 @@ $(document).ready(function(){
       playerTwoHand.push(drawCard());
     }
   }
+  $(".deck-one").text(playerOneHand.length);
+  $(".deck-two").text(playerTwoHand.length);
 
   $("#war").click(function() {
     warTurn(playerOneHand, playerTwoHand);
+    $(".deck-one").text(playerOneHand.length);
+    $(".deck-two").text(playerTwoHand.length);
   });
 });
