@@ -13,7 +13,7 @@ function drawCard() {
   return card;
 }
 
-function warTurn (card1, card2) {
+function warJudge (card1, card2) {
   var card1Array = card1.split(" ");
   var card2Array = card2.split(" ");
   var card1Score = values.indexOf(card1Array[0]);
@@ -24,6 +24,35 @@ function warTurn (card1, card2) {
     return "Player Two Wins";
   } else {
     return "WAR!"
+  }
+}
+
+function warTurn (playerOneHand, playerTwoHand) {
+  var card1 = playerOneHand.pop();
+  $(".player1").prepend("<li>" + card1 + "</li>");
+  var card2 = playerTwoHand.pop();
+  $(".player2").prepend("<li>" + card2 + "</li>");
+  var result = warJudge(card1, card2);
+  $(".result").prepend("<li>" + result + "</li>");
+  var cards = [card1, card2];
+  while (result === "WAR!") {
+    card1 = playerOneHand.pop();
+    $(".player1").prepend("<li>" + card1 + "</li>");
+    card2 = playerTwoHand.pop();
+    $(".player2").prepend("<li>" + card2 + "</li>");
+    var result = warJudge(card1, card2);
+    $(".result").prepend("<li>" + result + "</li>");
+    cards.push(card1);
+    cards.push(card2);
+  }
+  if (result === "Player One Wins") {
+    cards.forEach(function(card) {
+      playerOneHand.unshift(card);
+    });
+  } else {
+    cards.forEach(function(card) {
+      playerTwoHand.unshift(card);
+    });
   }
 }
 
@@ -46,11 +75,6 @@ $(document).ready(function(){
   }
 
   $("#war").click(function() {
-    var card1 = playerOneHand.pop();
-    $(".player1").append("<li>" + card1 + "</li>");
-    var card2 = playerTwoHand.pop();
-    $(".player2").append("<li>" + card2 + "</li>");
-    var result = warTurn(card1, card2);
-    $(".result").append("<li>" + result + "</li>");
+    warTurn(playerOneHand, playerTwoHand);
   });
 });
