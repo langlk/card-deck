@@ -19,7 +19,10 @@ $(document).ready(function(){
     });
   });
 
-  $("#hand").click(function(){
+  $("#hand").click(function() {
+    $("#cards").slideUp();
+    $(".drawn-hand").hide();
+    $(".drawn-hand").empty();
     var pickedCards = []
     for(card = 0; card < 5; card+=1){
       var displayCard = drawOneCard();
@@ -29,5 +32,7 @@ $(document).ready(function(){
       pickedCards.push(displayCard);
       $(".drawn-hand").append("<li>" + displayCard + "</li>");
     }
+
+    $(".drawn-hand").slideToggle();
   });
 });
