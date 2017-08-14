@@ -1,3 +1,15 @@
 .drawn-hand {
   display: none;
 }
+
+.col-md-4 {
+  text-align: center;
+}
+
+.col-md-4 ul {
+  list-style: none;
+}
+
+.col-md-4 h4 {
+  margin-bottom: 12px;
+}
