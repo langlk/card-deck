@@ -27,23 +27,31 @@ function warJudge (card1, card2) {
   }
 }
 
-function warTurn (playerOneHand, playerTwoHand) {
+function drawCards(playerOneHand, playerTwoHand) {
   var card1 = playerOneHand.pop();
-  $(".player1").prepend("<li>" + card1 + "</li>");
   var card2 = playerTwoHand.pop();
-  $(".player2").prepend("<li>" + card2 + "</li>");
-  var result = warJudge(card1, card2);
+  return [card1, card2];
+}
+
+function printHand(score1, score2, result) {
+  $(".player1").prepend("<li>" + score1 + "</li>");
+  $(".player2").prepend("<li>" + score2 + "</li>");
   $(".result").prepend("<li>" + result + "</li>");
-  var cards = [card1, card2];
+}
+
+function warTurn (playerOneHand, playerTwoHand) {
+  var cards = drawCards(playerOneHand, playerTwoHand);
+  var result = warJudge(cards[0], cards[1]);
+  printHand(cards[0], cards[1], result);
   while (result === "WAR!") {
-    card1 = playerOneHand.pop();
-    $(".player1").prepend("<li>" + card1 + "</li>");
-    card2 = playerTwoHand.pop();
-    $(".player2").prepend("<li>" + card2 + "</li>");
-    var result = warJudge(card1, card2);
-    $(".result").prepend("<li>" + result + "</li>");
-    cards.push(card1);
-    cards.push(card2);
+    debugger;
+    for (i = 1; i < 4; i += 1) {
+      cards = cards.concat(drawCards(playerOneHand, playerTwoHand));
+      printHand(cards[cards.length - 2], cards[cards.length - 1], i);
+    }
+    cards = cards.concat(drawCards(playerOneHand,playerTwoHand));
+    var result = warJudge(cards[cards.length - 1], cards[cards.length - 2]);
+    printHand(cards[cards.length - 2], cards[cards.length - 1], i);
   }
   if (result === "Player One Wins") {
     cards.forEach(function(card) {
