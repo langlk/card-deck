@@ -53,7 +53,6 @@ function warTurn (playerOneHand, playerTwoHand) {
   while (result === "WAR!") { // Tie
     // Each player draws 3 cards
     for (i = 1; i < 4; i += 1) {
-      debugger;
       cards = cards.concat(drawCards(playerOneHand, playerTwoHand));
       printHand(cards[cards.length - 2], cards[cards.length - 1], i);
     }
