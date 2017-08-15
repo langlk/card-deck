@@ -44,7 +44,6 @@ function warTurn (playerOneHand, playerTwoHand) {
   var result = warJudge(cards[0], cards[1]);
   printHand(cards[0], cards[1], result);
   while (result === "WAR!") {
-    debugger;
     for (i = 1; i < 4; i += 1) {
       cards = cards.concat(drawCards(playerOneHand, playerTwoHand));
       printHand(cards[cards.length - 2], cards[cards.length - 1], i);
