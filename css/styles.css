@@ -9,6 +9,7 @@ body {
 
 .container {
   background-color: rgba(209, 209, 209, .8);
+  color: rgb(71, 42, 42);
   height: 100vh;
 }
 
@@ -30,8 +31,20 @@ ul {
   padding: 0px;
 }
 
+.btn.btn-default {
+  color: rgb(71, 42, 42);
+  border-color: rgb(71, 42, 42);
+  background-color: rgb(209, 209, 209);
+  margin: 0px 3px;
+  width: 125px;
+}
+
 .btn:hover {
   cursor: pointer;
+}
+
+.btn-default:hover {
+  background-color: rgb(178, 178, 178);
 }
 
 .jumbotron a {
