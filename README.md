@@ -1,6 +1,6 @@
 # _Card Deck_
 
-#### _Epicodus Practice in JavaScript, August 14, 2017_
+#### _Epicodus Practice in JavaScript, August 18, 2017_
 
 #### By Elrey Belmonti and Kelsey Langlois
 
@@ -10,8 +10,14 @@ _Site that performs various operations on an HTML representation of a card deck 
 
 ## Setup/Installation Requirements
 
+_You can view this project online at [langlk.github.io/card-deck](https://langlk.github.io/card-deck/). To install on your own computer, follow the steps below:_
+
 * Clone this repository
 * Open index.html in web browser
+
+## Known Bugs
+
+_There is currently no code in place to handle someone actually winning a game of War. Given how unlikely that event typically is, this is not seen as an urgent issue._
 
 ## Support and contact details
 
