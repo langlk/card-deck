@@ -21,6 +21,18 @@ function drawOneCard() {
   return values[valuesIndex] + " of " + suits[suitIndex];
 }
 
+function drawHand() {
+  var pickedCards = []
+  for(card = 0; card < 5; card+=1){
+    var newCard = drawOneCard();
+    while (pickedCards.includes(newCard)) {
+      newCard = drawOneCard();
+    }
+    pickedCards.push(newCard);
+  }
+  return pickedCards;
+}
+
 $(document).ready(function(){
   $("#toggle-cards").click(function() {
     var deck = makeDeck();
@@ -42,16 +54,10 @@ $(document).ready(function(){
     $("#cards").slideUp();
     $(".drawn-hand").hide();
     $(".drawn-hand").empty();
-    var pickedCards = []
-    for(card = 0; card < 5; card+=1){
-      var displayCard = drawOneCard();
-      while (pickedCards.includes(displayCard)) {
-        displayCard = drawOneCard();
-      }
-      pickedCards.push(displayCard);
-      $(".drawn-hand").append("<li>" + displayCard + "</li>");
-    }
-
+    var hand = drawHand();
+    hand.forEach(function(card) {
+      $(".drawn-hand").append("<li>" + card + "</li>");
+    });
     $(".drawn-hand").slideToggle();
   });
 });
