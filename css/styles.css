@@ -1,3 +1,43 @@
+body {
+  background: url("../img/cards.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Roboto Slab', serif;
+}
+
+.container {
+  background-color: rgba(209, 209, 209, .8);
+  height: 100vh;
+}
+
+.jumbotron {
+  background-color: rgba(71, 42, 42, .7);
+  color: #dddddd;
+  padding-bottom: 10px;
+}
+
+.contents {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.jumbotron a {
+  color: #828282;
+}
+
 #cards {
   display: none;
 }
@@ -10,14 +50,23 @@
   display: none;
 }
 
+/*WAR PAGE*/
+.war-y {
+  font-family: 'Permanent Marker', cursive;
+}
+
+h1.war-y {
+  font-size: 50px;
+}
+
+.btn.war-y {
+  font-size: 20px;
+}
+
 .col-md-4 {
   text-align: center;
 }
 
-.col-md-4 ul {
-  list-style: none;
-}
-
 .col-md-4 h4 {
-  margin-bottom: 12px;
+  margin-bottom: 17px;
 }

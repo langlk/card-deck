@@ -39,6 +39,7 @@ $(document).ready(function(){
     deck.forEach(function(card) {
       $("#cards").append("<li>" + card + "</li>");
     });
+    $(".drawn-hand").hide();
     $("#cards").show();
     $(".show").hide();
     $(".hide").show();
@@ -46,6 +47,7 @@ $(document).ready(function(){
       $("#cards").toggle();
       $(".show").toggle();
       $(".hide").toggle();
+      $(".drawn-hand").hide();
     });
   });
 
@@ -59,5 +61,7 @@ $(document).ready(function(){
       $(".drawn-hand").append("<li>" + card + "</li>");
     });
     $(".drawn-hand").slideToggle();
+    $(".show").show();
+    $(".hide").hide();
   });
 });

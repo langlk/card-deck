@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Permanent+Marker" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <script src="js/jquery-3.2.1.js"></script>
@@ -9,19 +10,24 @@
   </head>
   <body>
     <div class="container">
-      <h1>Deck of Cards</h1>
-      <button id="toggle-cards" type="button" class="btn">
-        <span class="show">See the Deck</span>
-        <span class="hide">Hide the Deck</span>
-      </button>
-      <button id="hand" type="button" class="btn">Draw hand</button>
-      <a href="war.html"><button id="play-war" type="button" class="btn">Play War</button></a>
-      <ul id=cards>
+      <div class="jumbotron">
+        <h1>Deck of Cards</h1>
+        <p>An exercise in JavaScript</p>
+      </div>
+      <div class="contents">
+        <button id="toggle-cards" type="button" class="btn">
+          <span class="show">See the Deck</span>
+          <span class="hide">Hide the Deck</span>
+        </button>
+        <button id="hand" type="button" class="btn">Draw a Hand</button>
+        <a href="war.html"><button id="play-war" type="button" class="btn">Play War</button></a>
+        <ul id=cards>
 
-      </ul>
-      <ul class="drawn-hand">
+        </ul>
+        <ul class="drawn-hand">
 
-      </ul>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
