@@ -1,6 +1,16 @@
 var suits = ["Spades", "Hearts", "Clubs", "Diamonds"];
 var values = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"];
 
+function makeDeck() {
+  var deck = [];
+  suits.forEach(function(suit){
+    values.forEach(function(value){
+      deck.push(value + " of " + suit);
+    });
+  });
+  return deck;
+}
+
 function getRandom(min, max) {
   return parseInt(Math.random() * (max - min) + min);
 }
@@ -12,12 +22,21 @@ function drawOneCard() {
 }
 
 $(document).ready(function(){
-
-  suits.forEach(function(suit){
-    values.forEach(function(value){
-      $("#cards").append("<li>" + value + " of " + suit + "</li>");
+  $("#toggle-cards").click(function() {
+    var deck = makeDeck();
+    deck.forEach(function(card) {
+      $("#cards").append("<li>" + card + "</li>");
+    });
+    $("#cards").show();
+    $(".show").hide();
+    $(".hide").show();
+    $("#toggle-cards").click(function() {
+      $("#cards").toggle();
+      $(".show").toggle();
+      $(".hide").toggle();
     });
   });
+
 
   $("#hand").click(function() {
     $("#cards").slideUp();

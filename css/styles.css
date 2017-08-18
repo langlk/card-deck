@@ -1,3 +1,11 @@
+#cards {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
 .drawn-hand {
   display: none;
 }
